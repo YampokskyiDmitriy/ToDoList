@@ -6,7 +6,6 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -22,7 +21,6 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("My ToDo List", "Index", "ToDoes")</li>
-                    <li>@Html.ActionLink("About me", "About", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -32,7 +30,12 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>
+                &copy; @DateTime.Now.Year - Yampolskyi ASP.NET Application
+                <a href="https://github.com/YampokskyiDmitriy"><img src="~/Images/github_icon.png" / class="FooterImages" alt="github"></a>
+                <a href="https://t.me/klounyara"><img src="~/Images/telegram_icon.png" / class="FooterImages" alt="telegram"></a>
+                <a href="https://www.instagram.com/jessusgodzzz/"><img src="~/Images/instagram_icon.png" / class="FooterImages" alt="instagram"></a>
+</p>
         </footer>
     </div>
 

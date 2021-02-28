@@ -27,3 +27,10 @@ textarea {
 .CompletedToDo {
     text-decoration: line-through;
 }
+
+/*Styling for footers images*/
+.FooterImages 
+{
+    width: 24px;
+    margin-left: 10px;
+}
