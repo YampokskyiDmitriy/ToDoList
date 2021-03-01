@@ -40,7 +40,13 @@ namespace ToDoList.Controllers
                 }
             }
 
+            //Check of percentage of progress
+            //If percent is not a number then percentage equals zero
+            int num;
             ViewBag.Percent = Math.Round(100f * ((float)completeCount / (float)myToDoes.Count()));
+            bool isNum = int.TryParse(ViewBag.Percent.ToString(), out num);
+            if (!isNum)
+                ViewBag.Percent = 0;
 
             return myToDoes;
         }
