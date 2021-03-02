@@ -2,9 +2,8 @@
 
 <div id="toDoProgressBar">
     <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width:@(Html.AttributeEncode(ViewBag.Percent))%"></div>
+        <div class="progress-bar" role="progressbar" style="width:@(Html.AttributeEncode(ViewBag.Percent))%"><div id="percent">@(ViewBag.Percent)%</div></div>
     </div>
-    <p>@(ViewBag.Percent)%</p>
 </div>
 
 <table class="table">
