@@ -157,7 +157,7 @@ namespace ToDoList.Controllers
 
 
         [HttpPost]
-        public ActionResult AJAXEdit(int? id, bool value)
+        public ActionResult AJAXEditIsDoneCheckBox(int? id, bool value)
         {
             if (id == null)
             {

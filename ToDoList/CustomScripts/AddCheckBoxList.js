@@ -6,7 +6,7 @@
 
         $.ajax({
 
-            url: '/ToDoes/AJAXEdit',
+            url: '/ToDoes/AJAXEditIsDoneCheckBox',
             data: {
                 id: id,
                 value: value
