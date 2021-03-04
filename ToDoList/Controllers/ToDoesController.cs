@@ -18,7 +18,6 @@ namespace ToDoList.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: ToDoes
-
         public ActionResult Index()
         {
             return View();
@@ -39,7 +38,6 @@ namespace ToDoList.Controllers
                     completeCount++;
                 }
             }
-
             //Check of percentage of progress
             //If percent is not a number then percentage equals zero
             int num;
@@ -55,48 +53,6 @@ namespace ToDoList.Controllers
         {
             return PartialView("_ToDoTable", GetToDoes());
         }
-
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ToDo toDo = db.ToDos.Find(id);
-            if (toDo == null)
-            {
-                return HttpNotFound();
-            }
-            return View(toDo);
-        }
-
-
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: ToDoes/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Description,IsDone")] ToDo toDo)
-        {
-            if (ModelState.IsValid)
-            {
-                string currentUserId = User.Identity.GetUserId();
-                ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
-                toDo.User = currentUser;
-                db.ToDos.Add(toDo);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(toDo);
-        }
-
 
         [HttpPost]
         [ValidateAntiForgeryToken]
